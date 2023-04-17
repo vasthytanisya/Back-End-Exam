@@ -41,14 +41,14 @@ namespace GripFoodBackEnd.Services
                 return;
             }
 
-            var account = new User
+            var user = new User
             {
                 Id = id,
                 Name = "Administrator",
                 Email = "admin@gmail.com",
                 Password = BCrypt.Net.BCrypt.HashPassword("password"),
             };
-            _db.Users.Add(account);
+            _db.Users.Add(user);
             await _db.SaveChangesAsync(cancellationToken);
         }
 
